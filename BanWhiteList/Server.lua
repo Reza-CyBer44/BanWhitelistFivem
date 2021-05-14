@@ -178,7 +178,7 @@ AddEventHandler('playerConnecting', function(name, kick, deferrals)
         return
     end
     if BanWhiteListConfig.EnableWhitelist then
-        if IsPlayerAlreadyWhitelisted then
+        if not IsPlayerAlreadyWhitelisted then
             CancelEvent()
             kick(BanWhiteListConfig.WhitelistString)
             return
